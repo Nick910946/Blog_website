@@ -1,0 +1,1 @@
+const CategoryModel = require('../../modals/category')
