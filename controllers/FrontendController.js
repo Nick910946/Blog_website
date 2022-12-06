@@ -1,7 +1,11 @@
+const BlogModel = require('../modals/Blog')
+
 class FrontendController{
     static home = async(req,res)=>{
         try{
-            res.render('front/home')
+            const blogs = await BlogModel.find()
+            // console.log(blogs)
+            res.render('front/home',{b : blogs})
         }catch(err){
             console.log(err)  
         }
@@ -15,7 +19,9 @@ class FrontendController{
     }
     static details = async(req,res)=>{
         try{
-            res.render('front/blogdetails')
+            // console.log(req.params.id)
+            const data = await BlogModel.findById(req.params.id)
+            res.render('front/blogdetails',{res : data})
         }catch(err){
             console.log(err)  
         }
@@ -36,7 +42,7 @@ class FrontendController{
     }
     static login = async(req,res)=>{
         try{
-            res.render('front/login1')
+            res.render('front/login1',{succmessage: req.flash('suMsg'), msgerr: req.flash('error')})
         }catch(err){
             console.log(err)  
         }

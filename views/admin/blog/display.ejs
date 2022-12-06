@@ -4,15 +4,7 @@
         <div class="body-content">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="dash-left">
-                        <ul>
-                            <li class="active"><a href="dashboard.html">Dashboard</a></li>
-                            <li><a href="admin-blog-list.html" class="active">Blogs</a></li>
-                            <li><a href="#">Categories</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </div>   
+                    <%- include('../../sidebar.ejs')%> 
                 </div>
                 <div class="col-md-9">
                     <div class="dash-right">
@@ -21,7 +13,7 @@
                                 <h1>Blogs</h1>
                             </div>
                             <div class="dash-nav">
-                                <a href="blog-form.html" class="btn btn-success">Add Post</a>
+                                <a href="/blog/create" class="btn btn-success">Add Post</a>
                             </div>
                         </div>
                         <table class="table table-bordered table-striped">
@@ -32,6 +24,7 @@
                                        
                                         <th>Title</th>
                                         <th>Description</th>
+                                        <th>Images</th>
                                  
                                         <th>Action</th>
                                     </tr>
@@ -42,19 +35,16 @@
                                         <td><%= item.id %></td>
                                         <td><%= item.title %></td>
                                         <td><%= item.description %></td>
+                                        <td><img src="<%= item.image.url %>" alt="" style="height: 100px; width: 100px; border-radius: 100%;"></td>
+
                                         <td>
-                                            <a href="#" class="btn btn-success btn-sm">View</a>
-                                            <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="/admin/Viewblog/<%= item._id %>" class="btn btn-success btn-sm">View</a>
+                                            <a href="/admin/editblog/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="/admin/deleteblog/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
     
-                                
-
-                            <% }) %>
-                           
-                            
-                           
+                                <% }) %>
                         </table>
                     </div>   
                 </div>

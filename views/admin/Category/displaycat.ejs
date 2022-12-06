@@ -1,0 +1,58 @@
+<%- include('../../header.ejs')%>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../../sidebar.ejs')%> 
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Blogs</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/Category/createcategory" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                          
+                                
+                                    <tr>
+                                        <th>#ID</th>
+                                       
+                                        <th>Title</th>
+                                        
+                                 
+                                        <th>Action</th>
+                                    </tr>
+                                    <% res.forEach((item)=> { %>
+                                    <tr>
+                                        
+                                        
+                                        <td><%= item.id %></td>
+                                        <td><%= item.title %></td>
+                                       
+                                        <td>
+                                            <a href="/Category/Viewcat/<%= item._id %>" class="btn btn-success btn-sm">View</a>
+                                            <a href="/Category/editcat/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="/Category/deletecat/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+    
+                                
+
+                            <% }) %>
+                           
+                            
+                           
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../footer.ejs')%>

@@ -5,20 +5,11 @@
         <div class="body-content">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="dash-left navbar-nav">
-                        <ul>
-                            <li ><a href="dashboard.html" >Dashboard</a></li>
-                            <li><a href="admin-blog-list.html">Blogs</a></li>
-                            <li><a href="#">Categories</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </div>   
+                     <%- include('../sidebar.ejs')%>
                 </div>
                 <div class="col-md-9">
-                    <div class="dash-right">
-                        <h1>Welcome To Dashboard</h1>
+                    <div class="dash-right">    
+                        <h1>Welcome To &nbsp;<%= n %>'s Dashboard  </h1>
                         <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
                     </div>   
                 </div>

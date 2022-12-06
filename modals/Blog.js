@@ -9,9 +9,19 @@ const BlogSchema = new mongoose.Schema({
     description: {
         type:String,
         require:true,
-    }
+    },
+    image: {
+        public_id: {
+          type: String,
+          required: true,
+        },
+        url: {
+          type: String,
+          required: true,
+        },
+      },
 
-})
+},{timestamps:true})
 
 const BlogModel = mongoose.model('Blogs', BlogSchema)
 
